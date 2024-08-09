@@ -1,0 +1,6 @@
+
+function CreateInventory(id)
+    
+
+
+end
