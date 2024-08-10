@@ -27,3 +27,19 @@ function TableContainKey(t, value)
     end
     return false
 end
+
+
+--- Calculates the maximum weight capacity based on the type of container in the inventory.
+--- @param inv The inventory object to check.
+--- @return The maximum weight capacity.
+function CalculMaxWeight(inv)
+    local maxWeight = 0
+    if TableContainKey(inventory.inventory, "suitecase") then
+        maxWeight = 80
+    elseif TableContainKey(inventory.inventory, "backpack") then
+        maxWeight = 60
+    else
+        maxWeight = 40
+    end
+    return maxWeight
+end

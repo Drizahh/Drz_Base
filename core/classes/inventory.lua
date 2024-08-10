@@ -2,14 +2,11 @@ ItemCategory = {weapon = {"weapon_switchblade", "weapon_nightstick", "weapon_wre
                 clothe = {},
                 food = {},}
 
-
-
 function CreateInventory(id)
     local self = {}
     self.inventory = {}
+    self.maxWeight = 0
     self.weight = 0
-  
-
 
     --- Loads the inventory data from the database.
     function self.loadInventory()
@@ -19,6 +16,7 @@ function CreateInventory(id)
 
     end
     
+    self.maxWeight = CalculMaxWeight(self)
     ---Saves the player's inventory to the database.
     function self.saveInventory()
         MySQL.update('UPDATE users SET inventory = ?, weight = ? WHERE identifier = ?', {
@@ -67,18 +65,16 @@ function CreateInventory(id)
     --- Adds a specified amount of money to the player's inventory.
     --- @param amount number The amount of money to add.
     function self.addMoney(ammount)
-        self.addItem("money", ammount)
+        self:addItem("money", ammount)
     end
 
     -- Removes a specified amount of money from the player's inventory.
     --- @param ammount number The amount of money to remove.
     function self.removeMoney(ammount)
-        self.removeItem("money", ammount)
+        self:removeItem("money", ammount)
     end
 
-
-
-
+    
 
 
 
