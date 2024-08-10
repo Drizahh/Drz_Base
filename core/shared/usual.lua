@@ -9,3 +9,21 @@ function GetItemWeight(item)
     })
     return responce
 end
+
+
+function Sizeof(table)
+    local cpt = 0
+    for _, _ in pairs(table) do
+        cpt = cpt + 1
+    end
+    return cpt
+end
+
+function TableContainKey(t, value)
+    for _,k in pairs(t) do 
+        if k == value then
+            return true
+        end
+    end
+    return false
+end
