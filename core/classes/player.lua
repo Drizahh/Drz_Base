@@ -69,7 +69,7 @@ function CreatePlayer(id)
     function self.kick(reason)
         DropPlayer(self.id, reason)
     end
-
+    
 
 
 
