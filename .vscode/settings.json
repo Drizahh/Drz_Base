@@ -1,0 +1,6 @@
+{
+    "Lua.diagnostics.globals": [
+        "SetEntityCoords"
+    ],
+    "problems.decorations.enabled": false
+}
